@@ -2,19 +2,17 @@
 #include <stdio.h>
 
 int main() {
-    int n;
-	int a;
-	int b;
-	int c;
+    int n, rev = 0;
 
-    printf("Enter a number (max 3 digits): ");
+    printf("Enter a number (1 to 3 digits): ");
     scanf("%d", &n);
 
-    a = n % 10;
-    b = (n / 10) % 10;
-    c = n / 100;
+    while (n > 0) {
+        rev = rev * 10 + (n % 10);
+        n /= 10;
+    }
 
-    printf("Reversed number: %d%d%d\n", a, b, c);
+    printf("Reversed number: %d\n", rev);
 
     return 0;
 }
